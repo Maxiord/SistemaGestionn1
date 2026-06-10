@@ -1,0 +1,19 @@
+[33ma60519e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32m1-registrar-cliente[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;31morigin/1-registrar-cliente[m[33m, [m[1;32mmain[m[33m)[m Agrero js
+Producto.JS
+[33m6e6fb11[m Agregar iniciales del sistema
+App.js
+Cliente.js
+Compra.js
+Proveedor.js
+Reporte.js
+Stock.js
+Venta.js
+docs/diagramauml.md
+[33mc2aea90[m agregar uml inicial
+docs/HistoriasDeUsuario.md
+docs/docs/DiagramaUML.md
+[33mb98bb3c[m Update README with project information and features
+README.md
+[33m97d9810[m Initial commit
+.gitignore
+README.md
