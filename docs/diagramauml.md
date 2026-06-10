@@ -1,4 +1,4 @@
-# Diagrama de Clases UML (Actualizado)
+# Diagrama de Clases UML 
 
 ```mermaid
 classDiagram
