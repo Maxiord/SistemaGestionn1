@@ -98,20 +98,4 @@ module.exports = {
     registrarCliente,
     listarClientes,
     modificarCliente
-};
-
-function modificarCliente(dni, nuevoNombre) {
-    let cliente = clientes.find(c => c.dni === dni);
-
-    if (cliente) {
-        cliente.nombre = nuevoNombre;
-        console.log("Cliente modificado correctamente");
-    } else {
-        console.log("Cliente no encontrado");
-    }
-}
-module.exports = {
-    registrarCliente,
-    listarClientes,
-    modificarCliente
-};
+};
