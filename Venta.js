@@ -50,7 +50,10 @@ function registrarVenta() {
 
     while (agregarMas) {
         console.log("\n--- Agregar Producto a la Venta ---");
-        const productoIdInput = prompt("Ingrese el ID del producto:");
+        const productoIdInput = prompt("Ingrese el ID del producto (o presione ENTER para finalizar/cancelar):");
+        if (!productoIdInput) {
+            break;
+        }
         const producto = productos.find(p => p.id.toString() === productoIdInput);
 
         if (!producto) {
