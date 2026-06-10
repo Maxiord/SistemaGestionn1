@@ -1,52 +1,64 @@
-# Diagrama de Clases UML
+# Diagrama de Clases UML (Actualizado)
 
 ```mermaid
 classDiagram
 
 class Cliente {
-    +id
-    +nombre
-    +telefono
-    +email
-    +registrar()
-    +modificar()
+    +id: Number
+    +nombre: String
+    +dni: String
+    +telefono: String
+    +email: String
+    +registrarCliente()
+    +modificarCliente()
+    +listarClientes()
 }
 
 class Producto {
-    +id
-    +nombre
-    +precio
-    +categoria
-    +registrar()
-    +modificar()
+    +id: Number
+    +nombre: String
+    +precio: Number
+    +categoria: String
+    +registrarProducto()
+    +modificarProducto()
+    +listarProductos()
 }
 
 class Proveedor {
-    +id
-    +nombre
-    +telefono
-    +email
-    +registrar()
+    +id: Number
+    +nombre: String
+    +telefono: String
+    +email: String
+    +registrarProveedor()
+    +listarProveedores()
 }
 
 class Compra {
-    +id
-    +fecha
-    +total
+    +id: Number
+    +proveedorId: Number
+    +fecha: Date
+    +detalles: List
+    +total: Number
     +registrarCompra()
 }
 
 class Venta {
-    +id
-    +fecha
-    +total
+    +id: Number
+    +clienteId: Number
+    +fecha: Date
+    +detalles: List
+    +total: Number
     +registrarVenta()
 }
 
 class Stock {
-    +cantidadDisponible
+    +stock: Map
+    +inicializarStock(productoId)
+    +incrementarStock(productoId, cantidad)
+    +decrementarStock(productoId, cantidad)
+    +actualizarStock(productoId, cantidad)
     +consultarStock()
-    +actualizarStock()
+    +actualizarStockManual()
 }
 
 class Reporte {
@@ -55,17 +67,12 @@ class Reporte {
     +generarReporteStock()
 }
 
-Cliente "1" --> "*" Venta
-
-Proveedor "1" --> "*" Compra
-
-Compra "*" --> "*" Producto
-
-Venta "*" --> "*" Producto
-
-Producto "1" --> "1" Stock
-
-Reporte ..> Venta
-Reporte ..> Compra
-Reporte ..> Stock
+Cliente "1" --> "*" Venta : realiza
+Proveedor "1" --> "*" Compra : provee
+Compra "*" --> "*" Producto : contiene
+Venta "*" --> "*" Producto : contiene
+Producto "1" --> "1" Stock : tiene
+Reporte ..> Venta : analiza
+Reporte ..> Compra : analiza
+Reporte ..> Stock : analiza
 ```
